@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(main.cpp)
+find_package(OpenCV REQUIRED)
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable(main.cpp main.cpp featureVectors.cpp csv_util.cpp utils.cpp utils.h)
+add_executable(Matching.cpp Matching.cpp featureVectors.cpp csv_util.cpp distanceMetrics.cpp utils.cpp utils.h)
+target_link_libraries(main.cpp ${OpenCV_LIBS})
+target_link_libraries(Matching.cpp ${OpenCV_LIBS})
